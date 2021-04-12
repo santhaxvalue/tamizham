@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1057945937313",
+    "project_id": "videoapplicationtamilam",
+    "storage_bucket": "videoapplicationtamilam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057945937313:android:e0f1c9c7f698364f9297e0",
+        "android_client_info": {
+          "package_name": "com.xvalue.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057945937313-84qj8kua2ukn5k290vahuquepmdv0lp4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xvalue.myapplication",
+            "certificate_hash": "0aaa0b5a2dcd186dfc7c9124d17ceb1496d80c41"
+          }
+        },
+        {
+          "client_id": "1057945937313-llgeo1ghlmqjp0jso0qndbtibmmeno82.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xvalue.myapplication",
+            "certificate_hash": "c79d21eb3ed14733ea5f1c31fd469a23dc9799f3"
+          }
+        },
+        {
+          "client_id": "1057945937313-qklsvo3jp53dr6g806sir7sc0ndsatkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZZ1GYZ89jYiygQUb5tQLDNPS51MjcKMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057945937313-qklsvo3jp53dr6g806sir7sc0ndsatkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
