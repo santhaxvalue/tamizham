@@ -264,6 +264,7 @@ public class TrendingFragment extends Fragment {
                     rv.setLayoutManager(HorizontalLayout);
                     rv.setAdapter(videoListAdapter);
 
+
                     allVideoListAdapter = new AllVideoListAdapter(getActivity(),homePageSingleResponseAll);
                     LinearLayoutManager VerticalLayout = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
                     pop_recycler_view.setLayoutManager(VerticalLayout);

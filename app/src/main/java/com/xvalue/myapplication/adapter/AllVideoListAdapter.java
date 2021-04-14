@@ -1,6 +1,7 @@
 package com.xvalue.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.xvalue.myapplication.R;
+import com.xvalue.myapplication.activity.DetailViewActivity;
 import com.xvalue.myapplication.model.HomePageResponse;
 
 import java.util.List;
@@ -18,6 +20,8 @@ public class AllVideoListAdapter extends RecyclerView.Adapter<AllVideoListAdapte
 
     private Context context;
     private List<HomePageResponse.Data.AllVideo> homepagesingleresponseall;
+
+    private HomePageResponse.Data.AllVideo pu;
 
     public AllVideoListAdapter(Context context, List<HomePageResponse.Data.AllVideo> homepagesingleresponseall) {
         this.context = context;
@@ -36,7 +40,7 @@ public class AllVideoListAdapter extends RecyclerView.Adapter<AllVideoListAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setTag(homepagesingleresponseall.get(position));
 
-        HomePageResponse.Data.AllVideo pu = homepagesingleresponseall.get(position);
+         pu = homepagesingleresponseall.get(position);
 
 //        holder.pName.setText(pu.getVideoUrlHigh());
 //        holder.pJobProfile.setText(pu.getVideoUrlLow());
@@ -77,7 +81,12 @@ public class AllVideoListAdapter extends RecyclerView.Adapter<AllVideoListAdapte
                 @Override
                 public void onClick(View view) {
 
-                    HomePageResponse.Data.Trending cpu = (HomePageResponse.Data.Trending) view.getTag();
+                    Intent intent = new Intent(AllVideoListAdapter.this.context, DetailViewActivity.class);
+                    intent.putExtra("title", pu.getTitle());
+                    intent.putExtra("time", pu.getVideoDuration());
+                    AllVideoListAdapter.this.context.startActivity(intent);
+
+//                    HomePageResponse.Data.Trending cpu = (HomePageResponse.Data.Trending) view.getTag();
 
 //                    Toast.makeText(view.getContext(), cpu.getPersonName()+" is "+ cpu.getJobProfile(), Toast.LENGTH_SHORT).show();
 

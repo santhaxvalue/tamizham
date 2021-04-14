@@ -17,4 +17,8 @@
 
     <color name="txt_body">#6e777e</color>
 
+    <color name="white_inactive_txt_color">#d3d3d3</color>]
+
+    <color name="gray">#8c8c8c</color>
+
 </resources>

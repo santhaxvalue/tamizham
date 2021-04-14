@@ -1,6 +1,7 @@
 package com.xvalue.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.xvalue.myapplication.R;
+import com.xvalue.myapplication.activity.DetailViewActivity;
 import com.xvalue.myapplication.model.HomePageResponse;
 
 import java.util.List;
@@ -18,6 +20,8 @@ public class TrendingVideoListAdapter extends RecyclerView.Adapter<TrendingVideo
 
     private Context context;
     private List<HomePageResponse.Data.Trending> homepagesingleresponseTrend;
+
+    private HomePageResponse.Data.Trending pu;
 
     public TrendingVideoListAdapter(Context context, List<HomePageResponse.Data.Trending> homepagesingleresponseTrend) {
         this.context = context;
@@ -36,7 +40,7 @@ public class TrendingVideoListAdapter extends RecyclerView.Adapter<TrendingVideo
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setTag(homepagesingleresponseTrend.get(position));
 
-        HomePageResponse.Data.Trending pu = homepagesingleresponseTrend.get(position);
+        pu = homepagesingleresponseTrend.get(position);
 
 //        holder.pName.setText(pu.getVideoUrlHigh());
 //        holder.pJobProfile.setText(pu.getVideoUrlLow());
@@ -77,7 +81,12 @@ public class TrendingVideoListAdapter extends RecyclerView.Adapter<TrendingVideo
                 @Override
                 public void onClick(View view) {
 
-                    HomePageResponse.Data.Trending cpu = (HomePageResponse.Data.Trending) view.getTag();
+//                    HomePageResponse.Data.Trending cpu = (HomePageResponse.Data.Trending) view.getTag();
+
+                    Intent intent = new Intent(TrendingVideoListAdapter.this.context, DetailViewActivity.class);
+                    intent.putExtra("title", pu.getTitle());
+                    intent.putExtra("time", pu.getVideoDuration());
+                    TrendingVideoListAdapter.this.context.startActivity(intent);
 
 //                    Toast.makeText(view.getContext(), cpu.getPersonName()+" is "+ cpu.getJobProfile(), Toast.LENGTH_SHORT).show();
 

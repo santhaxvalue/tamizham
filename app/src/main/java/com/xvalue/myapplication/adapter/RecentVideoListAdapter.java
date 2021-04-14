@@ -1,6 +1,7 @@
 package com.xvalue.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.xvalue.myapplication.R;
+import com.xvalue.myapplication.activity.DetailViewActivity;
 import com.xvalue.myapplication.model.HomePageResponse;
 
 import java.util.List;
@@ -18,6 +20,8 @@ public class RecentVideoListAdapter extends RecyclerView.Adapter<RecentVideoList
 
     private Context context;
     private List<HomePageResponse.Data.FavouriteVideo> homepagesingleresponsefavourite;
+
+    private HomePageResponse.Data.FavouriteVideo pu;
 
     public RecentVideoListAdapter(Context context, List<HomePageResponse.Data.FavouriteVideo> homepagesingleresponsefavourite) {
         this.context = context;
@@ -36,7 +40,7 @@ public class RecentVideoListAdapter extends RecyclerView.Adapter<RecentVideoList
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setTag(homepagesingleresponsefavourite.get(position));
 
-        HomePageResponse.Data.FavouriteVideo pu = homepagesingleresponsefavourite.get(position);
+        pu = homepagesingleresponsefavourite.get(position);
 
 //        holder.pName.setText(pu.getVideoUrlHigh());
 //        holder.pJobProfile.setText(pu.getVideoUrlLow());
@@ -77,7 +81,12 @@ public class RecentVideoListAdapter extends RecyclerView.Adapter<RecentVideoList
                 @Override
                 public void onClick(View view) {
 
-                    HomePageResponse.Data.Trending cpu = (HomePageResponse.Data.Trending) view.getTag();
+//                    HomePageResponse.Data.Trending cpu = (HomePageResponse.Data.Trending) view.getTag();
+
+                    Intent intent = new Intent(RecentVideoListAdapter.this.context, DetailViewActivity.class);
+                    intent.putExtra("title", pu.getTitle());
+                    intent.putExtra("time", pu.getVideoDuration());
+                    RecentVideoListAdapter.this.context.startActivity(intent);
 
 //                    Toast.makeText(view.getContext(), cpu.getPersonName()+" is "+ cpu.getJobProfile(), Toast.LENGTH_SHORT).show();
 

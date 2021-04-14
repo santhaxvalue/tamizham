@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- <item>
+         <inset android:drawable="@drawable/circle_bg_new" android:insetRight="10dp" />
+     </item>-->
+    <item
+        android:drawable="@drawable/ic_arrow_black"
+        android:bottom="7dp"
+        android:left="7dp"
+        android:right="7dp"
+        android:height="15dp"
+        android:width="15dp"
+        android:top="7dp"/>
+</layer-list>
