@@ -14,6 +14,31 @@
         <item name="android:textColor">@color/primaryText</item>
     </style>
 
+    <style name="New_TextViewStyle">
+        <item name="android:textColor">#CC000000</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/hkgrotesk_medium</item>
+    </style>
+
+    <style name="New_TextViewStyle12">
+        <item name="android:textColor">@color/txt_body</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/hkgrotesk_regular</item>
+    </style>
+
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="New_WhiteSmallTextViewStyle">
+        <item name="android:textColor">@color/white</item>
+<!--        <item name="android:textSize">@dimen/_11ssp</item>-->
+<!--        <item name="android:fontFamily">@font/hkgrotesk_bold</item>-->
+    </style>
+
 <!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
 <!--    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->

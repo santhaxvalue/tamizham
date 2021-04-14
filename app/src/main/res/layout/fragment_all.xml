@@ -1,8 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-/</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/lookingforlayout"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/trasparent_rounded_corner"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Looking for"
+                android:textColor="@android:color/white"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentLeft="true"
+                android:textSize="20dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_baseline_search_24"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/newvideolayout"
+            android:layout_below="@+id/lookingforlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFFLINE VIDEOS (0)"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true"
+                android:textSize="20dp"/>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/video_lister_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/newvideolayout"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/offline_video_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:layout_marginEnd="12dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/no_down_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/img_downloads" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/recycle_placeholder_txt"
+                style="@style/New_TextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:visibility="visible"
+                android:text="No Downloads!" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/recycle_no_down_txt"
+                style="@style/New_TextViewStyle12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:visibility="visible"
+                android:text="Click on download icon inside any lesson &amp; watch even when internet is not connected." />
+
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

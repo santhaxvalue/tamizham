@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.xvalue.myapplication.BottomTab;
@@ -34,12 +35,17 @@ public class AllFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    private View view;
+    private RecyclerView recyclerViewOffline;
+
     public AllFragment() {
 
     }
 
-    public static TrendingFragment newInstance(String param1, String param2) {
-        TrendingFragment fragment = new TrendingFragment();
+    public static AllFragment newInstance(String param1, String param2) {
+        AllFragment fragment = new AllFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -57,16 +63,23 @@ public class AllFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_all, container, false);
+        view = inflater.inflate(R.layout.fragment_all, container, false);
 
-        apiInterface= RetrofitInstance.getAllVideos().create(ApiInterface.class);
 
-        getAllVideos();
+        initLayout();
+
+//        apiInterface= RetrofitInstance.getAllVideos().create(ApiInterface.class);
+
+//        getAllVideos();
 
 
 
         return view;
 
+    }
+
+    private void initLayout() {
+        recyclerViewOffline = view.findViewById(R.id.offline_video_list);
     }
 
     private void getAllVideos() {
@@ -83,7 +96,7 @@ public class AllFragment extends Fragment {
             public void onResponse(Call<AllVideoResponse> call, Response<AllVideoResponse> response) {
                 if (response.code() == 200) {
                     Log.d("getAllVideos_response:","getAllVideos_response:"+new Gson().toJson(response.body()));
-                    Toast.makeText(getActivity(), "getAllVideos  Successfull: ", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "getAllVideos  Successfull: ", Toast.LENGTH_SHORT).show();
                     AllVideoResponse loginResponse = response.body();
                     if(loginResponse.getStatus().equals("success")) {
                         Intent intent = new Intent(getActivity(), BottomTab.class);

@@ -9,4 +9,12 @@
 
 <!--    <item name="colorPrimaryDark">@color/new_screen_bg_color</item>-->
 
+    <color name="white">#ffffff</color>
+    <color name="new_screen_bg_color">#f6f6f6</color>
+    <color name="txt_header">#5b6571</color>
+    <color name="new_colorPrimary">#3072FF</color>
+    <color name="txt_hint">#c8cccf</color>
+
+    <color name="txt_body">#6e777e</color>
+
 </resources>

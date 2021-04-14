@@ -36,8 +36,8 @@ public class FavFragment extends Fragment {
 
     }
 
-    public static TrendingFragment newInstance(String param1, String param2) {
-        TrendingFragment fragment = new TrendingFragment();
+    public static FavFragment newInstance(String param1, String param2) {
+        FavFragment fragment = new FavFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

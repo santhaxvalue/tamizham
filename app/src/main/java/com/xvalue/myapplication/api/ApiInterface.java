@@ -1,6 +1,7 @@
 package com.xvalue.myapplication.api;
 
 import com.xvalue.myapplication.model.AllVideoResponse;
+import com.xvalue.myapplication.model.HomePageResponse;
 import com.xvalue.myapplication.model.ImageList;
 import com.xvalue.myapplication.model.LoginResponse;
 import com.xvalue.myapplication.model.RegisterResponse;
@@ -46,6 +47,12 @@ public interface ApiInterface {
     @POST("api/getAllVideos")
     Call<AllVideoResponse> getAllVideos(@Header("Authorization") String BearerToken,@Field("user_id") String user_id,
                                         @Field("language") String language);
+
+
+    @FormUrlEncoded
+    @POST("api/homepageService")
+    Call<HomePageResponse> getHomeAllService(@Header("Authorization") String BearerToken, @Field("user_id") String user_id,
+                                             @Field("language") String language, @Field("SearchText") String searchtext);
 
 
     @FormUrlEncoded

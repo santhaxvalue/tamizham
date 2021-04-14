@@ -55,6 +55,17 @@ public class RetrofitInstance {
 
     }
 
+    public static Retrofit getHomePageService(){
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl("http://3.6.233.52/tamizham/public/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+
+    }
+
     public static Retrofit getRegister(){
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
